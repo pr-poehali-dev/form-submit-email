@@ -4,7 +4,33 @@ import Icon from "@/components/ui/icon";
 const NAV_LINKS = [
   { label: "О компании", href: "#about" },
   { label: "Преимущества", href: "#advantages" },
+  { label: "Вакансии", href: "#vacancies" },
   { label: "Контакты", href: "#contact" },
+];
+
+const VACANCIES = [
+  {
+    category: "Рабочие специальности",
+    icon: "Zap",
+    positions: [
+      { title: "Электромонтёр по ремонту ВЛ", grade: "3–4 разряд" },
+      { title: "Электромонтёр по ремонту ВЛ", grade: "5–6 разряд" },
+      { title: "Электромонтёр по обслуживанию подстанций", grade: "3–4 разряд" },
+      { title: "Электромонтёр по обслуживанию подстанций", grade: "5–6 разряд" },
+      { title: "Электромонтёр по измерениям и испытаниям", grade: "4–5 разряд" },
+    ],
+  },
+  {
+    category: "Инженерные специальности",
+    icon: "Cpu",
+    positions: [
+      { title: "Инженер релейной защиты и автоматики", grade: "I–II категория" },
+      { title: "Инженер по эксплуатации подстанций", grade: "I–II категория" },
+      { title: "Инженер по охране труда", grade: "без категории / I категория" },
+      { title: "Инженер-энергетик", grade: "I–II категория" },
+      { title: "Инженер по метрологии", grade: "без категории" },
+    ],
+  },
 ];
 
 const ADVANTAGES = [
@@ -302,6 +328,86 @@ export default function Index() {
                 <p className="font-body font-light text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
                   {item.desc}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VACANCIES */}
+      <section id="vacancies" className="py-28" style={{ backgroundColor: "var(--cream)" }}>
+        <div className="container mx-auto px-8">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <span className="divider-gold" />
+              <span
+                className="text-xs tracking-[0.3em] uppercase font-body font-medium"
+                style={{ color: "var(--gold)" }}
+              >
+                Открытые позиции
+              </span>
+              <span className="divider-gold" />
+            </div>
+            <h2 className="text-5xl font-display font-light" style={{ color: "var(--navy)" }}>
+              Актуальные{" "}
+              <em className="not-italic font-semibold" style={{ color: "var(--navy)" }}>
+                вакансии
+              </em>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {VACANCIES.map((group) => (
+              <div
+                key={group.category}
+                className="border bg-white"
+                style={{ borderColor: "rgba(15,34,64,0.12)" }}
+              >
+                <div
+                  className="px-8 py-5 flex items-center gap-4 border-b"
+                  style={{ backgroundColor: "var(--navy)", borderColor: "rgba(255,255,255,0.08)" }}
+                >
+                  <div
+                    className="w-9 h-9 flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: "var(--gold)", color: "var(--navy)" }}
+                  >
+                    <Icon name={group.icon} size={16} />
+                  </div>
+                  <h3 className="text-sm font-body font-medium tracking-widest uppercase text-white">
+                    {group.category}
+                  </h3>
+                </div>
+                <div className="divide-y" style={{ borderColor: "rgba(15,34,64,0.08)" }}>
+                  {group.positions.map((pos) => (
+                    <div
+                      key={pos.title + pos.grade}
+                      className="px-8 py-5 flex items-center justify-between gap-4"
+                    >
+                      <span className="font-body text-sm font-medium" style={{ color: "var(--navy)" }}>
+                        {pos.title}
+                      </span>
+                      <span
+                        className="text-xs font-body tracking-wide whitespace-nowrap px-3 py-1 border flex-shrink-0"
+                        style={{ borderColor: "var(--gold)", color: "var(--gold)" }}
+                      >
+                        {pos.grade}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <div className="px-8 py-5 border-t" style={{ borderColor: "rgba(15,34,64,0.08)" }}>
+                  <button
+                    onClick={() => {
+                      const el = document.querySelector("#contact");
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="text-xs tracking-widest uppercase font-body font-medium flex items-center gap-2 transition-opacity hover:opacity-70"
+                    style={{ color: "var(--navy)" }}
+                  >
+                    Откликнуться
+                    <Icon name="ArrowRight" size={14} />
+                  </button>
+                </div>
               </div>
             ))}
           </div>
