@@ -146,7 +146,7 @@ export default function Index() {
                 className="text-xs tracking-[0.3em] uppercase font-body font-medium"
                 style={{ color: "var(--gold)" }}
               >
-                С 2009 года на рынке
+                ПАО «Россети Центр» — «Липецкэнерго»
               </span>
             </div>
 
@@ -463,12 +463,14 @@ export default function Index() {
         style={{ backgroundColor: "var(--navy)", borderColor: "rgba(255,255,255,0.08)" }}
       >
         <div className="container mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <span
-            className="text-lg font-display font-semibold tracking-wider"
-            style={{ color: "var(--gold)" }}
-          >
-            КОРПОРАЦИЯ
-          </span>
+          <div className="flex flex-col leading-tight">
+            <span className="text-xs font-body font-medium tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.4)" }}>
+              ПАО «Россети Центр»
+            </span>
+            <span className="text-base font-display font-semibold tracking-wide" style={{ color: "var(--gold)" }}>
+              «Липецкэнерго»
+            </span>
+          </div>
           <span className="text-xs tracking-widest font-body" style={{ color: "rgba(255,255,255,0.3)" }}>
             © 2024 Все права защищены
           </span>
