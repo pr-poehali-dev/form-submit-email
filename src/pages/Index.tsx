@@ -154,21 +154,20 @@ export default function Index() {
               className="text-6xl md:text-8xl font-display font-light leading-none text-white mb-6"
               style={{ animation: "fade-up 0.7s ease 0.1s forwards", opacity: 0 }}
             >
-              Решения,
+              Ищем
               <br />
               <em className="not-italic font-semibold" style={{ color: "var(--gold)" }}>
-                которые
+                сотрудников
               </em>
               <br />
-              работают.
+              в организацию.
             </h1>
 
             <p
               className="text-white/60 text-lg font-body font-light leading-relaxed max-w-xl mb-10"
               style={{ animation: "fade-up 0.7s ease 0.25s forwards", opacity: 0 }}
             >
-              Мы предоставляем комплексные бизнес-решения для компаний,
-              стремящихся к устойчивому росту и долгосрочному успеху.
+              Ищем сотрудников для работы в организации.
             </p>
 
             <div
