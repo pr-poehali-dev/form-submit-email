@@ -55,16 +55,20 @@ export default function Index() {
         style={{ backgroundColor: "var(--navy)", borderColor: "rgba(255,255,255,0.08)" }}
       >
         <div className="flex items-center gap-3">
-          <span
-            className="text-xl font-display font-semibold tracking-wider"
-            style={{ color: "var(--gold)" }}
-          >
-            КОРПОРАЦИЯ
-          </span>
-          <span className="w-px h-5 bg-white/20" />
-          <span className="text-white/50 text-xs font-body tracking-widest uppercase hidden sm:block">
-            Профессиональные решения
-          </span>
+          <div className="flex flex-col leading-tight">
+            <span
+              className="text-xs font-body font-medium tracking-widest uppercase"
+              style={{ color: "rgba(255,255,255,0.5)" }}
+            >
+              ПАО «Россети Центр»
+            </span>
+            <span
+              className="text-lg font-display font-semibold tracking-wide"
+              style={{ color: "var(--gold)" }}
+            >
+              «Липецкэнерго»
+            </span>
+          </div>
         </div>
 
         <div className="hidden md:flex items-center gap-8">
